@@ -1,6 +1,12 @@
 function Message () {
     const name = "Maxim"
-    return <h1>Hello {name}</h1>
+    if (name){
+        return <h1>Hello {name}</h1>
+    }
+    else{
+        return <h1>No name</h1>
+    }
+
 }
 
 export default Message
