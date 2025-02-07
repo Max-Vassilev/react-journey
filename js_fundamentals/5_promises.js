@@ -26,7 +26,7 @@ myFunc
 
 const axios = require("axios");
 
-const data = axios.get("https://swapi.dev/api/people/2/");
+const data = axios.get("https://swapi.dev/api/people/1/");
 
 // console.log(data) -> this won't work because it prints before the result is returned
 
