@@ -16,10 +16,12 @@ body {
   font-family: "DM Sans", sans-serif;
   font-optical-sizing: auto;
   background: var(--color-primary);
+  margin: 0;
+  padding: 0;
 }
 
 h1 {
-  max-width: 4xl;
+  max-width: 64rem;
   text-align: center;
   font-size: 5rem;
   font-weight: bold;
@@ -35,21 +37,19 @@ h2 {
 }
 
 main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   min-height: 100vh;
   position: relative;
   background: var(--color-primary);
   color: white;
+  padding: 0 1rem;
 }
 
 header {
+  margin-top: 5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
 }
 
 header img {
@@ -102,4 +102,44 @@ header img {
 
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
+}
+
+/* Center the search bar */
+.search {
+  width: 100%;
+  background: rgba(206, 206, 251, 0.05);
+  padding: 12px;
+  border-radius: 0.75rem;
+  margin-top: 2.5rem;
+  max-width: 48rem;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search div {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.search img {
+  position: absolute;
+  left: 0.5rem;
+  height: 20px;
+  width: 20px;
+}
+
+.search input {
+  width: 100%;
+  background: transparent;
+  padding: 0.5rem 2.5rem 0.5rem 2.5rem;
+  font-size: 1rem;
+  color: rgba(156, 164, 171, 1);
+  border: none;
+  border-radius: 0.75rem;
+  outline: none;
 }
