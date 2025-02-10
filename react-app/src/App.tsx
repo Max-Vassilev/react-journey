@@ -1,8 +1,22 @@
-import ListGroup from "./components/ListGroup";
-
+import { useState } from "react";
+import Alert from "./components/Alert";
+import Button from "./components/Button";
 
 function App() {
-  return <div><ListGroup/></div>;
+
+  // State Hook
+  const [alertVisible, setAlertVisibility] = useState(false)
+
+  const handleSelectItem = () => {
+    setAlertVisibility(false)
+  }
+
+  return (
+    <div>
+      {alertVisible && <Alert onClose={handleSelectItem}>Hello world</Alert>}
+      <Button color="primary" onClick={() => setAlertVisibility(true)}>See alert message</Button>
+    </div>
+  )
 }
 
 export default App
