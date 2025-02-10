@@ -1,44 +1,105 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
+:root {
+  --color-primary: #030014;
+  --color-light-100: #cecefb;
+  --color-light-200: #a8b5db;
+  --color-gray-100: #9ca4ab;
+  --color-dark-100: #0f0d23;
+  --font-dm-sans: "DM Sans", sans-serif;
+  --breakpoint-xs: 480px;
+  --background-image-hero-pattern: url("/hero-bg.png");
 }
 
 body {
-  padding: 40px;
-  background-color: #151515;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: "DM Sans", sans-serif;
+  font-optical-sizing: auto;
+  background: var(--color-primary);
+}
+
+h1 {
+  max-width: 4xl;
+  text-align: center;
+  font-size: 5rem;
+  font-weight: bold;
+  line-height: 1.25;
+  letter-spacing: -1%;
+  color: white;
 }
 
 h2 {
-  color: #f3f3f3;
-  text-align: center;
-  margin-bottom: 30px;
-  font-size: 48px;
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
 }
 
-.cart-container {
+main {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  max-width: 1024px;
-  margin: 0 auto;
+  align-items: center;
+  min-height: 100vh;
+  position: relative;
+  background: var(--color-primary);
+  color: white;
 }
 
-.card {
-  border: 1px solid #4b5362; 
-  padding: 20px;
-  margin: 10px;
-  background-color: #31363f;
-  border-radius: 10px;
-  min-height: 100px;
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
 
-button {
-  border: none;
-  font-size: 30px;
-  background-color: transparent;
+header img {
   width: 100%;
-  text-align: right;
-  cursor: pointer;
+  max-width: 32rem;
+  height: auto;
+  object-fit: contain;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.pattern {
+  background: var(--background-image-hero-pattern);
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  z-index: 0;
+}
+
+.wrapper {
+  padding: 3rem 1.25rem;
+  max-width: 7xl;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 10;
+}
+
+.text-gradient {
+  background: linear-gradient(to right, #d6c7ff, #ab8bff);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.fancy-text {
+  -webkit-text-stroke: 5px rgba(206, 206, 251, 0.5);
+  font-size: 190px;
+  font-family: "Bebas Neue", sans-serif;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
 }
