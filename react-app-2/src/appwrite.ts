@@ -16,9 +16,11 @@ export const updateSearchCount = async (search_term: string, movie: { id: string
 
         if (result.documents.length > 0) {
             const doc = result.documents[0];
-
+            // Update
             await database.updateDocument(DATABASE_ID, COLLECTION_ID, doc.$id, { count: doc.count + 1 });
-        } else {
+        } 
+        else {
+            // Create
             await database.createDocument(DATABASE_ID, COLLECTION_ID, ID.unique(), {
                 search_term,
                 count: 1,
@@ -34,6 +36,7 @@ export const updateSearchCount = async (search_term: string, movie: { id: string
 
 export const getTrendingMovies = async () => {
     try {
+    // Get
      const result = await database.listDocuments(DATABASE_ID, COLLECTION_ID, [
        Query.limit(5),
        Query.orderDesc("count")
