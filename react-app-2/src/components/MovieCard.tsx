@@ -1,4 +1,12 @@
-const MovieCard = ({ movie }) => {
+interface Movie {
+    poster_path: string | null;
+    title: string;
+    vote_average: number | null;
+    original_language: string;
+    release_date: string | null;
+  }
+  
+  const MovieCard = ({ movie }: { movie: Movie }) => {
   return (
     <div className="movie-card">
         <img src={movie.poster_path ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}` : '/no-movie.png'}></img>
